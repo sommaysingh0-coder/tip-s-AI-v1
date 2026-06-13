@@ -1,6 +1,8 @@
 import streamlit as st
 import random
 import pyjokes
+import json
+
 
 st.set_page_config(page_title="The Tips AI")
 
@@ -42,6 +44,7 @@ if option == "Calculator":
         st.success(f"Answer = {answer}")
 
 # Joke
+
 elif option == "Joke":
     if st.button("Tell Joke"):
         st.write(pyjokes.get_joke())
