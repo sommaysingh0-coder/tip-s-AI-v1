@@ -97,22 +97,77 @@ elif option == "About Creator":
     st.write("FAVORITE game: Minecraft")
     st.write("FAVORITE anime: Naruto")
 # Storage Memory
+# Storage Memory
 elif option == "storage memory":
+    try:
+        with open("memory.json", "r") as f:
+            knowledge = json.load(f)
+    except:
+        knowledge = {}
 
- try:
-     with open("memory.json", "r") as f:
-         knowledge = json.load(f)
- except:
-     knowledge = {}
+    st.subheader("🧠 Storage Memory")
 
- key = st.text_input("Word")
+    key = st.text_input("Word")
+    value = st.text_input("Meaning")
 
- value = st.text_input("Meaning")
+    if st.button("Save"):
 
- if st.button("Save"):
-     knowledge[key] = value
+        if key and value:
 
-     with open("memory.json", "w") as f:
-        json.dump(knowledge, f)
+            knowledge[key] = value
 
-     st.success("Saved!")
+            with open("memory.json", "w") as f:
+                json.dump(knowledge, f)
+
+            st.success("Saved!")
+
+        else:
+            st.error("Please enter both Word and Meaning")
+
+    st.divider()
+
+    search = st.text_input("Search Word")
+
+    if st.button("Find"):
+
+        if search in knowledge:
+            st.success(
+                f"{search} = {knowledge[search]}"
+            )
+
+        else:
+            st.error("Word not found")
+
+    st.divider()
+
+    delete_word = st.text_input(
+        "Delete Word"
+    )
+
+    if st.button("Delete"):
+
+        if delete_word in knowledge:
+
+            del knowledge[delete_word]
+
+            with open("memory.json", "w") as f:
+                json.dump(knowledge, f)
+
+            st.success("Deleted!")
+
+        else:
+            st.error("Word not found")
+
+    st.divider()
+
+    if st.button("Show All Saved Words"):
+
+        if knowledge:
+
+            for k, v in knowledge.items():
+                st.write(
+                    f"🔹 {k} = {v}"
+                )
+
+        else:
+            st.info("Memory is empty")
