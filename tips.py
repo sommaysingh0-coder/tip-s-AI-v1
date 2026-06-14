@@ -271,3 +271,25 @@ elif option == "Dice Roller":
         st.success(
             random.randint(1, 6)
         )
+#background
+import base64
+
+def add_bg():
+    with open("xxxxxx.jpg", "rb") as image:
+        encoded = base64.b64encode(image.read()).decode()
+
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("data:image/jpg;base64,{encoded}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+add_bg()
