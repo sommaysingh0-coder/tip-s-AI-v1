@@ -9,8 +9,7 @@ st.set_page_config(page_title="The Tips AI")
 st.title("🤖 The Tips AI")
 st.write("Created by Sommay Singh")
 
-option = st.selectbox
-(
+option = st.selectbox(
     "Choose a feature",
     [
         "Calculator",
