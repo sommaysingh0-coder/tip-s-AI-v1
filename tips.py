@@ -18,7 +18,7 @@ option = st.selectbox(
         "ABCD",
         "Counter",
         "About Creator",
-        "storage memory "
+        "storage memory"
     ]
 )
 
