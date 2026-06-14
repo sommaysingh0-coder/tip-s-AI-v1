@@ -4,7 +4,11 @@ import pyjokes
 import json
 import string
 
-st.set_page_config(page_title="The Tips AI")
+st.markdown("""
+<h1 style='text-align:center;color:white;'>
+🤖 THE TIPS AI
+</h1>
+""", unsafe_allow_html=True)
 
 st.title("🤖 The Tips AI")
 st.write("Created by Sommay Singh")
@@ -293,3 +297,50 @@ def add_bg():
     )
 
 add_bg()
+###########################################
+st.markdown("""
+<style>
+
+/* Main background */
+.stApp {
+    background-color: #0a192f;
+}
+
+/* Selectbox */
+div[data-baseweb="select"] > div {
+    background-color: #112240 !important;
+    color: white !important;
+    border-radius: 10px;
+}
+
+/* Number Input */
+.stNumberInput input {
+    background-color: #112240 !important;
+    color: white !important;
+}
+
+/* Text Input */
+.stTextInput input {
+    background-color: #112240 !important;
+    color: white !important;
+}
+
+/* Buttons */
+.stButton > button {
+    background-color: #1e3a8a !important;
+    color: white !important;
+    border-radius: 10px;
+    border: none;
+}
+
+.stButton > button:hover {
+    background-color: #2563eb !important;
+}
+
+/* Titles */
+h1, h2, h3, p, label {
+    color: white !important;
+}
+
+</style>
+""", unsafe_allow_html=True)
