@@ -2,14 +2,15 @@ import streamlit as st
 import random
 import pyjokes
 import json
-
+import string
 
 st.set_page_config(page_title="The Tips AI")
 
 st.title("🤖 The Tips AI")
 st.write("Created by Sommay Singh")
 
-option = st.selectbox(
+option = st.selectbox
+(
     "Choose a feature",
     [
         "Calculator",
@@ -18,36 +19,61 @@ option = st.selectbox(
         "ABCD",
         "Counter",
         "About Creator",
-        "storage memory"
+        "storage memory",
+        "Password Generator",
+        "Dice Roller"
+
     ]
 )
 
 # Calculator
 if option == "Calculator":
-    num1 = st.number_input("First Number")
-    op = st.selectbox("Operator", ["+", "-", "*", "/", "%"])
-    num2 = st.number_input("Second Number")
 
-    if st.button("Calculate"):
+ st.subheader("🧮 Calculator")
 
-        if op == "+":
-            answer = num1 + num2
-        elif op == "-":
-            answer = num1 - num2
-        elif op == "*":
-            answer = num1 * num2
-        elif op == "/":
-            answer = num1 / num2
-        elif op == "%":
-            answer = num1 % num2
+ num1 = st.number_input("First Number")
 
-        st.success(f"Answer = {answer}")
+ op = st.selectbox(
+    "Choose Operator",
+        ["+", "-", "*", "/", "%"]
+)
 
+ num2 = st.number_input("Second Number")
+
+ if st.button("Calculate"):
+
+        try:
+
+            if op == "+":
+                answer = num1 + num2
+
+            elif op == "-":
+                answer = num1 - num2
+
+            elif op == "*":
+                answer = num1 * num2
+
+            elif op == "/":
+                answer = num1 / num2
+
+            elif op == "%":
+                answer = num1 % num2
+
+            st.success(f"Answer = {answer}")
+
+        except:
+            st.error("Calculation Error")
 # Joke
 
 elif option == "Joke":
-    if st.button("Tell Joke"):
-        st.write(pyjokes.get_joke())
+
+    st.subheader("😂 Joke Generator")
+
+    if st.button("Tell Me A Joke"):
+
+        joke = pyjokes.get_joke()
+
+        st.info(joke)
 
 # ABCD
 elif option == "ABCD":
@@ -56,20 +82,33 @@ elif option == "ABCD":
 
 # Counter
 elif option == "Counter":
-    limit = st.number_input("Count up to", min_value=1, step=1)
+
+    st.subheader("🔢 Counter")
+
+    limit = st.number_input(
+        "Count Up To",
+        min_value=1,
+        step=1
+    )
 
     if st.button("Start Counting"):
-        for i in range(1, int(limit) + 1):
+
+        for i in range(
+            1,
+            int(limit) + 1
+        ):
             st.write(i)
 
 # Guessing Game
 elif option == "Guessing Game":
 
+    st.subheader("🎮 Guessing Game")
+
     if "secret" not in st.session_state:
         st.session_state.secret = random.randint(1, 100)
 
     guess = st.number_input(
-        "Guess a number",
+        "Guess Number",
         min_value=1,
         max_value=100,
         step=1
@@ -78,25 +117,48 @@ elif option == "Guessing Game":
     if st.button("Check Guess"):
 
         if guess < st.session_state.secret:
-            st.warning("Too Low!")
+            st.warning("⬇ Too Low")
 
         elif guess > st.session_state.secret:
-            st.warning("Too High!")
+            st.warning("⬆ Too High")
 
         else:
-            st.success("Correct!")
-            st.session_state.secret = random.randint(1, 100)
+            st.success("🎉 Correct!")
 
+            st.session_state.secret = (
+                random.randint(1, 100)
+            )
 # About Creator
 elif option == "About Creator":
-    st.write("=================About Creator=================")
-    st.write("NAME: Sommay Singh")
-    st.write("AGE: 13")
-    st.write("HOBBIES: Coding, Gaming,love to chess ,and a anime fan")
-    st.write("FAVORITE COLOR: Black")   
-    st.write("FAVORITE game: Minecraft")
-    st.write("FAVORITE anime: Naruto")
-# Storage Memory
+
+    st.subheader("👨‍💻 About Creator")
+
+    st.write("Name : Sommay Singh")
+    st.write("Age : 13")
+
+    st.write(
+        "Hobbies : Coding, Chess, Gaming, Anime"
+    )
+
+    st.write(
+        "Favourite Game : Minecraft"
+    )
+
+    st.write(
+        "Favourite Anime : Naruto"
+    )
+
+    st.write(
+        "Project : The Tips AI"
+    )
+
+    st.write(
+        "Version : 1.0"
+    )
+
+    st.success(
+        "Made with Python + Streamlit"
+    )
 # Storage Memory
 elif option == "storage memory":
     try:
@@ -168,6 +230,45 @@ elif option == "storage memory":
                 st.write(
                     f"🔹 {k} = {v}"
                 )
-
         else:
             st.info("Memory is empty")
+#Password Generator
+elif option == "Password Generator":
+
+    st.subheader(
+        "🔑 Password Generator"
+    )
+
+    if st.button("Generate"):
+
+        chars = (
+            string.ascii_letters
+            + string.digits
+        )
+
+        password = "".join(
+            random.choice(chars)
+            for _ in range(12)
+        )
+
+        st.success(password)
+#Dice Roller
+elif option == "Dice Roller":
+
+    st.subheader("🎲 Dice Roller")
+
+    if st.button("Roll Dice"):
+
+        st.success(
+            random.randint(1, 6)
+        )
+#Dice Roller
+elif option == "Dice Roller":
+
+    st.subheader("🎲 Dice Roller")
+
+    if st.button("Roll Dice"):
+
+        st.success(
+            random.randint(1, 6)
+        )
