@@ -98,8 +98,7 @@ elif option == "About Creator":
     st.write("FAVORITE anime: Naruto")
 # Storage Memory
 elif option == "storage memory":
- st.text_input("enter a word for I M  save it in memory")
- st.text_input("enter the meaning of the word for I M  save it in memory")
+
  try:
      with open("memory.json", "r") as f:
          knowledge = json.load(f)
