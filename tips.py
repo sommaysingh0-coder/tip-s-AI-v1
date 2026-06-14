@@ -275,7 +275,7 @@ elif option == "Dice Roller":
 import base64
 
 def add_bg():
-    with open("xxxxxx.jpg", "rb") as image:
+    with open("xxxxxx.png", "rb") as image:
         encoded = base64.b64encode(image.read()).decode()
 
     st.markdown(
