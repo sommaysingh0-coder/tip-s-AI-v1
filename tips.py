@@ -10,7 +10,6 @@ st.markdown("""
 </h1>
 """, unsafe_allow_html=True)
 
-st.title("🤖 The Tips AI")
 st.write("Created by Sommay Singh")
 
 option = st.selectbox(
@@ -24,7 +23,8 @@ option = st.selectbox(
         "About Creator",
         "storage memory",
         "Password Generator",
-        "Dice Roller"
+        "Dice Roller","
+        "Coin Toss"
 
     ]
 )
@@ -265,16 +265,18 @@ elif option == "Dice Roller":
         st.success(
             random.randint(1, 6)
         )
-#Dice Roller
-elif option == "Dice Roller":
+#Coin Toss
+elif option == "Coin Toss":
 
-    st.subheader("🎲 Dice Roller")
+    st.subheader("🪙 Coin Toss")
 
-    if st.button("Roll Dice"):
+    if st.button("Flip Coin"):
 
-        st.success(
-            random.randint(1, 6)
+        result = random.choice(
+            ["Heads", "Tails"]
         )
+
+        st.success(result)
 #background
 import base64
 
