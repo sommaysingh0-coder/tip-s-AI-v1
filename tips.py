@@ -23,7 +23,7 @@ option = st.selectbox(
         "About Creator",
         "storage memory",
         "Password Generator",
-        "Dice Roller","
+        "Dice Roller",
         "Coin Toss"
 
     ]
