@@ -148,7 +148,7 @@ elif option == "About Creator":
     )
 
     st.write(
-        "Favourite Anime : Naruto"
+        "Favourite Anime : spy x family"
     )
 
     st.write(
