@@ -5,6 +5,11 @@ import json
 import string
 import base64
 
+query_params = st.query_params
+if "google4dfe7a57c79b210a" in query_params or ("page" in query_params and query_params["page"] == "google4dfe7a57c79b210a"):
+    st.write("google-site-verification: google4dfe7a57c79b210a.html")
+    st.stop() 
+    
 st.markdown("""
 <h1 style='text-align:center;color:white;'>
 🤖 THE TIPS AI
