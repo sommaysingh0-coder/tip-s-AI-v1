@@ -70,8 +70,8 @@ elif option == "Joke":
             
     elif joke_lang == "Hindi":
         st.subheader("😂 Hinglish Joke Generator")
-        if st.button("Mast Funny Joke Sunao Bhai! 😂"):
-            hindi_jokes = [
+           
+        hindi_jokes = [
                 "Teacher: Sommay, agar tumhare paas 4 kele hain aur tumne 2 apni behen ko de diye, toh tumhare paas kya bacha?\n\nSommay: Ek ghante tak uski chikh-pukar aur rona! 🍌😂",
                 "PTM ka Sach: Jab Papa class mein teacher ke samne baithte hain, toh lagta hai jaise CID ke samne koi mujrim baitha ho aur abhi thappad padne wala hai! 👨‍✈️",
                 "Teacher: Akash, Akbar ne kab tak raaj kiya tha ? Akash: Ma'am, page number 45 se lekar page number 52 tak! 📖",
@@ -178,7 +178,8 @@ elif option == "Joke":
                 "Password strength: 'Sommay@MinecraftLinuxLite123'. System: Password too strong, isko toh hacker bhi decode karne ke bad theoretical physics padhne chala jayega! 🔑🌌",
                 "Choti Behen: Bhaiya, mujhe chess mein hara diya. Sommay: Chinta mat kar, main tumhare liye Fabric API ka cheat code bana dunga! ♟️🛠️",
             ]
-        st.info(random.choice(hindi_jokes))
+        if st.button("Mast Funny Joke Sunao Bhai! 😂"):
+           st.info(random.choice(hindi_jokes))
 
 # ABCD
 elif option == "ABCD":
