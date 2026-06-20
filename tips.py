@@ -188,8 +188,7 @@ if option == "Joke":
            tts = gtts.gTTS(text=clean_text, lang='hi', slow=False)
            tts.save("joke_voice.mp3")
            st.audio("joke_voice.mp3" , format="audio/mp3")
-
-#open web
+#open web#################################
 if option == "open web":
     st.write("i can search anything on Google. ")
     import urllib.parse
@@ -205,7 +204,7 @@ if search_query:
     sa = st.link_button(f"Google Par '{search_query}' Search Karo 🚀", google_search_url) 
    
 
-# ABCD
+# ABCD######################################
 elif option == "ABCD":
     st.write("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z")
     st.write("a b c d e f g h i j k l m n o p q r s t u v w x y z")
