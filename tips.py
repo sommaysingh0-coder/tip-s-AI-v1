@@ -197,8 +197,7 @@ if option == "Joke":
         search_query
         encoded_query = urllib.parse.quote_plus(search_query)
         google_search_url = f"https://www.google.com/search?q={encoded_query}"
-    
-    sa = st.link_button(f"Google Par '{search_query}' Search Karo 🚀", google_search_url) 
+        sa = st.link_button(f"Google Par '{search_query}' Search Karo 🚀", google_search_url) 
    
 
 # ABCD######################################
