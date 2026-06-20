@@ -194,7 +194,7 @@ if option == "Joke":
         import urllib.parse
         st.subheader("🌐 Open Web - Search Anything on Google")
         search_query = st.text_input("what i should search?:", placeholder="Type here...")
-        if search_query:
+    if search_query:
            encoded_query = urllib.parse.quote_plus(search_query)
            google_search_url = f"https://www.google.com/search?q={encoded_query}"
     
