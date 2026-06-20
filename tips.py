@@ -58,7 +58,7 @@ if option == "Calculator":
             st.error("Calculation Error")
 
 # Joke
-import gTTS
+import gtts
 if option == "Joke":
     joke_lang = st.selectbox(
         "What language do you want to hear jokes in?",
