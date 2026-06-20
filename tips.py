@@ -182,9 +182,10 @@ if option == "Joke":
                 "Choti Behen: Bhaiya, mujhe chess mein hara diya. Sommay: Chinta mat kar, main tumhare liye Fabric API ka cheat code bana dunga! ♟️🛠️",
             ]
         if st.button("Mast Funny Joke Sunao Bhai! 😂"):
-           st.info(random.choice(hindi_jokes))
+           selected_joke = random.choice(hindi_jokes)
+           st.info(selected_joke)
            clean_text = selected_joke.replace("\n", " ")
-           tts = gTTS(text=clean_text, lang='hi', slow=False)
+           tts = gtts.gTTS(text=clean_text, lang='hi', slow=False)
            tts.save("joke_voice.mp3")
            st.audio("joke_voice.mp3" , format="audio/mp3")
 
