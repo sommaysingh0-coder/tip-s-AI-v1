@@ -249,7 +249,12 @@ elif option == "About Creator":
     st.write("Favourite Anime : spy x family")
     st.write("Project : The Tips AI")
     st.write("Version : 1.0")
-    st.success("Made with Python + Streamlit")
+    st.write('''You choose to know who created me!
+            I was created by Sommay. He is a 13-year-old boy, very smart, and the best programmer in the world! He is the leader of this team.
+He studies in 7th grade at Kendriya Vidyalaya. He has two more teammates, Tarun and Prashant, who are also 13 years old and study in the same class.
+This team of three KV kids worked together and made this project in just 30 days! Sommay is the main mind who created me, and all three friends are
+ working hard every day to make me better, smarter, and more useful.")
+    st.success("Made with Python + Streamlit''')
 
 # Storage Memory
 elif option == "storage memory":
