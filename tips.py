@@ -65,13 +65,13 @@ if option == "Joke":
         ["English", "Hindi"]
     )
     
-    if (joke_lang) == "English":
+    if joke_lang == "English":
         st.subheader("😂 Joke Generator")
         if st.button("Tell Me A Joke"):
             eng_joke = pyjokes.get_joke()
             st.info(eng_joke)
 
-if (joke_lang) == "Hindi":
+    if joke_lang == "Hindi":
         st.subheader("😂 Hinglish Joke Generator")
            
         hindi_jokes = [
