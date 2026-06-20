@@ -17,17 +17,18 @@ st.write("Created by Sommay Singh")
 option = st.selectbox(
     "Choose a feature",
     [   
+        "About Creator",
+        "storage memory",
+        "Counter",
         "Calculator",
         "Guessing Game",
         "Joke",
+        "Open web",
         "ABCD",
-        "Counter",
-        "About Creator",
-        "storage memory",
         "Password Generator",
         "Dice Roller",
-        "Coin Toss" ,
-        "Open web"
+        "Coin Toss" 
+        
     ]
 )
 
