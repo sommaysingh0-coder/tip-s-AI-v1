@@ -4,12 +4,9 @@ import pyjokes
 import json
 import string
 import base64
+import gTTS
+import os
 
-query_params = st.query_params
-if "google4dfe7a57c79b210a" in query_params or ("page" in query_params and query_params["page"] == "google4dfe7a57c79b210a"):
-    st.write("google-site-verification: google4dfe7a57c79b210a.html")
-    st.stop() 
-    
 st.markdown("""
 <h1 style='text-align:center;color:white;'>
 🤖 THE TIPS AI
@@ -30,7 +27,8 @@ option = st.selectbox(
         "storage memory",
         "Password Generator",
         "Dice Roller",
-        "Coin Toss"
+        "Coin Toss" ,
+        "open web"
     ]
 )
 
@@ -61,6 +59,7 @@ if option == "Calculator":
             st.error("Calculation Error")
 
 # Joke
+
 elif option == "Joke":
     joke_lang = st.selectbox(
         "What language do you want to hear jokes in?",
@@ -72,8 +71,9 @@ elif option == "Joke":
         if st.button("Tell Me A Joke"):
             eng_joke = pyjokes.get_joke()
             st.info(eng_joke)
-            
-    elif joke_lang == "Hindi":
+# hindi jokes 
+
+elif joke_lang == "Hindi":
         st.subheader("😂 Hinglish Joke Generator")
            
         hindi_jokes = [
@@ -185,6 +185,26 @@ elif option == "Joke":
             ]
         if st.button("Mast Funny Joke Sunao Bhai! 😂"):
            st.info(random.choice(hindi_jokes))
+           clean_text = selected_joke.replace("\n", " ")
+           tts = gTTS(text=clean_text, lang='hi', slow=False)
+           tts.save("joke_voice.mp3")
+           st.audio("joke_voice.mp3" , format="audio/mp3")
+
+#open web
+if option == "open web":
+    st.write("i can search anything on Google. ")
+    import urllib.parse
+    st.subheader("🌐 Open Web - Search Anything on Google")
+
+
+search_query = st.text_input("what i should search?:", placeholder="Type here...")
+
+if search_query:
+    encoded_query = urllib.parse.quote_plus(search_query)
+    google_search_url = f"https://www.google.com/search?q={encoded_query}"
+    
+    sa = st.link_button(f"Google Par '{search_query}' Search Karo 🚀", google_search_url) 
+   
 
 # ABCD
 elif option == "ABCD":
