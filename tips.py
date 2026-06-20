@@ -189,13 +189,13 @@ if option == "Joke":
            tts.save("joke_voice.mp3")
            st.audio("joke_voice.mp3" , format="audio/mp3")
 #open web#################################
-if option == "open web":
-    st.write("i can search anything on Google. ")
-    import urllib.parse
-    st.subheader("🌐 Open Web - Search Anything on Google")
+    if option == "open web":
+      st.write("i can search anything on Google. ")
+      import urllib.parse
+      st.subheader("🌐 Open Web - Search Anything on Google")
 
 
-    search_query = st.text_input("what i should search?:", placeholder="Type here...")
+      search_query = st.text_input("what i should search?:", placeholder="Type here...")
 
 if search_query:
     encoded_query = urllib.parse.quote_plus(search_query)
