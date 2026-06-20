@@ -4,7 +4,6 @@ import pyjokes
 import json
 import string
 import base64
-import gTTS
 import os
 
 st.markdown("""
@@ -59,8 +58,8 @@ if option == "Calculator":
             st.error("Calculation Error")
 
 # Joke
-
-elif option == "Joke":
+import gTTS
+if option == "Joke":
     joke_lang = st.selectbox(
         "What language do you want to hear jokes in?",
         ["English", "Hindi"]
@@ -71,9 +70,8 @@ elif option == "Joke":
         if st.button("Tell Me A Joke"):
             eng_joke = pyjokes.get_joke()
             st.info(eng_joke)
-# hindi jokes 
 
-elif joke_lang == "Hindi":
+if joke_lang == "Hindi":
         st.subheader("😂 Hinglish Joke Generator")
            
         hindi_jokes = [
