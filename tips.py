@@ -76,7 +76,6 @@ if option == "Joke":
         st.subheader("😂 Hinglish Joke Generator")
            
         hindi_jokes = [
-                "Teacher: Sommay, agar tumhare paas 4 kele hain aur tumne 2 apni behen ko de diye, toh tumhare paas kya bacha?\n\nSommay: Ek ghante tak uski chikh-pukar aur rona! 🍌😂",
                 "PTM ka Sach: Jab Papa class mein teacher ke samne baithte hain, toh lagta hai jaise CID ke samne koi mujrim baitha ho aur abhi thappad padne wala hai! 👨‍✈️",
                 "Teacher: Akash, Akbar ne kab tak raaj kiya tha ? Akash: Ma'am, page number 45 se lekar page number 52 tak! 📖",
                 "Mummy: PTM ka result kaisa raha? Beta: Mummy, teacher bol rahi thi ki aapka beta bohot 'Unique' hai, sabse alag hi chalta hai! 🏃\u200d♂️",
